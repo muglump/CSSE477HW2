@@ -7,6 +7,7 @@
 //
 
 #import "PluginContainerViewController.h"
+#import "StatusViewController.h"
 #import "CSBundle.h"
 
 @interface PluginContainerViewController () {
@@ -23,8 +24,8 @@
 {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
     {
-        _statusItem = [[UIViewController alloc]init];
-        _statusItem.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Status" image:[UIImage imageNamed:@"Dashboard"] tag:0];
+        UIViewController *rootViewController = [[StatusViewController alloc] init];
+        _statusItem = [[UINavigationController alloc] initWithRootViewController:rootViewController];
         [self beginWatchingPluginDirectory];
         [self updatePluginList];
         
