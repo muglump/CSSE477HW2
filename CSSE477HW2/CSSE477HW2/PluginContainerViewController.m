@@ -12,6 +12,7 @@
 @interface PluginContainerViewController () {
     dispatch_source_t _source;
     NSArray *_listOfPlugins;
+    UIViewController *_statusItem;
 }
 
 @end
@@ -22,8 +23,11 @@
 {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
     {
+        _statusItem = [[UIViewController alloc]init];
+        _statusItem.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Status" image:nil tag:0];
         [self beginWatchingPluginDirectory];
         [self updatePluginList];
+        
     }
     
     return self;
@@ -37,11 +41,13 @@ static inline NSString *pluginsDirectoryPath()
     return pluginsDirectory;
 }
 
+
 #pragma mark - UI Updates
 
 - (void)updateTabBar
 {
     NSMutableArray *viewControllers = [NSMutableArray array];
+    [viewControllers addObject:_statusItem];
     for (NSBundle *plugin in _listOfPlugins)
     {
         NSString *bundleName = [plugin objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleNameKey];
