@@ -23,7 +23,7 @@
 
 - (void)changePonyImage
 {
-    _poniesView.image = [UIImage imageWithContentsOfFile:_ponyImages[0]];
+    _poniesView.image = [UIImage imageWithContentsOfFile:_ponyImages[_index]];
     _index = (_index + 1) % _ponyImages.count;
 }
 
@@ -55,9 +55,10 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[ponies]|" options:kNilOptions metrics:Nil views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[ponies]|" options:kNilOptions metrics:Nil views:views]];
     
+    _poniesView.userInteractionEnabled = YES;
     UIButton *nextPony = [UIButton buttonWithType:UIButtonTypeCustom];
     nextPony.translatesAutoresizingMaskIntoConstraints = NO;
-    nextPony.backgroundColor = [UIColor redColor];
+    //nextPony.backgroundColor = [UIColor redColor];
     [nextPony addTarget:self action:@selector(changePonyImage) forControlEvents:UIControlEventTouchUpInside];
     
     views = @{@"nextPony": nextPony};
