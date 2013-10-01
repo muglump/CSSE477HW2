@@ -47,7 +47,11 @@ static inline NSString *pluginsDirectoryPath()
         NSString *bundleName = [plugin objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleNameKey];
         UIViewController <CSBundle> *viewController = [[[plugin principalClass] alloc] init];
         [viewController setBundle:plugin];
-        viewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:bundleName image:nil tag:0];
+        
+        NSString *iconName = [plugin objectForInfoDictionaryKey:@"CFBundleIconFile"];
+        NSString *iconPath = [plugin pathForResource:iconName.stringByDeletingPathExtension ofType:iconName.pathExtension];
+        UIImage *pluginIcon = [UIImage imageWithCGImage:[UIImage imageWithContentsOfFile:iconPath].CGImage scale:2 orientation:UIImageOrientationUp];
+        viewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:bundleName image:pluginIcon tag:0];
         
         [viewControllers addObject:viewController];
     }

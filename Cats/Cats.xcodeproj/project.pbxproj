@@ -12,6 +12,7 @@
 		B3579CA517FA59D8005C3560 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3579CA417FA59D8005C3560 /* UIKit.framework */; };
 		B3579CA717FA59DB005C3560 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3579CA617FA59DB005C3560 /* Foundation.framework */; };
 		B3579CAB17FA5DA0005C3560 /* cats.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3579CAA17FA5DA0005C3560 /* cats.jpg */; };
+		B3579CAE17FB7233005C3560 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B3579CAD17FB7233005C3560 /* Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B3579CA417FA59D8005C3560 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B3579CA617FA59DB005C3560 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B3579CAA17FA5DA0005C3560 /* cats.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cats.jpg; sourceTree = "<group>"; };
+		B3579CAD17FB7233005C3560 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		B3579C9617FA58AB005C3560 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B3579CAD17FB7233005C3560 /* Icon.png */,
 				B3579CAA17FA5DA0005C3560 /* cats.jpg */,
 				B3579C9717FA58AB005C3560 /* Cats-Info.plist */,
 				B3579C9817FA58AB005C3560 /* InfoPlist.strings */,
@@ -153,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3579CAE17FB7233005C3560 /* Icon.png in Resources */,
 				B3579CAB17FA5DA0005C3560 /* cats.jpg in Resources */,
 				B3579C9A17FA58AB005C3560 /* InfoPlist.strings in Resources */,
 			);
@@ -310,6 +314,7 @@
 				B3579CA017FA58AB005C3560 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

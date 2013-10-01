@@ -12,6 +12,7 @@
 		9ED3C38017FA62E5005A04EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED3C37F17FA62E5005A04EB /* Foundation.framework */; };
 		9ED3C38317FA631B005A04EB /* DSPoniesRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3C38217FA631B005A04EB /* DSPoniesRootViewController.m */; };
 		9ED3C3AB17FA6AFD005A04EB /* PonyImages in Resources */ = {isa = PBXBuildFile; fileRef = 9ED3C3AA17FA6AFD005A04EB /* PonyImages */; };
+		B3579CB017FB7241005C3560 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B3579CAF17FB7241005C3560 /* Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		9ED3C38117FA631B005A04EB /* DSPoniesRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSPoniesRootViewController.h; sourceTree = "<group>"; };
 		9ED3C38217FA631B005A04EB /* DSPoniesRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSPoniesRootViewController.m; sourceTree = "<group>"; };
 		9ED3C3AA17FA6AFD005A04EB /* PonyImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PonyImages; sourceTree = "<group>"; };
+		B3579CAF17FB7241005C3560 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		9ED3C37217FA62B9005A04EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B3579CAF17FB7241005C3560 /* Icon.png */,
 				9ED3C3AA17FA6AFD005A04EB /* PonyImages */,
 				9ED3C37317FA62B9005A04EB /* Ponies-Info.plist */,
 				9ED3C37417FA62B9005A04EB /* InfoPlist.strings */,
@@ -139,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3579CB017FB7241005C3560 /* Icon.png in Resources */,
 				9ED3C3AB17FA6AFD005A04EB /* PonyImages in Resources */,
 				9ED3C37617FA62B9005A04EB /* InfoPlist.strings in Resources */,
 			);
@@ -296,6 +300,7 @@
 				9ED3C37C17FA62B9005A04EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
