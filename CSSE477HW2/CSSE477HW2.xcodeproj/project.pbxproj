@@ -20,6 +20,7 @@
 		9ED3C35517FA4587005A04EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9ED3C35317FA4587005A04EB /* InfoPlist.strings */; };
 		9ED3C35717FA4587005A04EB /* CSSE477HW2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3C35617FA4587005A04EB /* CSSE477HW2Tests.m */; };
 		9ED3C36217FA477A005A04EB /* PluginContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3C36117FA477A005A04EB /* PluginContainerViewController.m */; };
+		B3579CB217FB766B005C3560 /* Dashboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3579CB117FB766B005C3560 /* Dashboard@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		9ED3C36017FA477A005A04EB /* PluginContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginContainerViewController.h; sourceTree = "<group>"; };
 		9ED3C36117FA477A005A04EB /* PluginContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginContainerViewController.m; sourceTree = "<group>"; };
 		B3579CAC17FA5F20005C3560 /* CSBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSBundle.h; sourceTree = "<group>"; };
+		B3579CB117FB766B005C3560 /* Dashboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dashboard@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		9ED3C33817FA4587005A04EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B3579CB117FB766B005C3560 /* Dashboard@2x.png */,
 				9ED3C33917FA4587005A04EB /* CSSE477HW2-Info.plist */,
 				9ED3C33A17FA4587005A04EB /* InfoPlist.strings */,
 				9ED3C33D17FA4587005A04EB /* main.m */,
@@ -229,6 +232,7 @@
 			files = (
 				9ED3C33C17FA4587005A04EB /* InfoPlist.strings in Resources */,
 				9ED3C34417FA4587005A04EB /* Images.xcassets in Resources */,
+				B3579CB217FB766B005C3560 /* Dashboard@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

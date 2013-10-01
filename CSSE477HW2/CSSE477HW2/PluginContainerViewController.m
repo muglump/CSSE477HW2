@@ -24,7 +24,7 @@
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
     {
         _statusItem = [[UIViewController alloc]init];
-        _statusItem.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Status" image:nil tag:0];
+        _statusItem.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Status" image:[UIImage imageNamed:@"Dashboard"] tag:0];
         [self beginWatchingPluginDirectory];
         [self updatePluginList];
         
