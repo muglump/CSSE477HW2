@@ -11,6 +11,7 @@
 
 @interface StatusViewController (){
     NSMutableArray *_statuses;
+    NSUInteger _lastSeenStatusesCount;
 }
 
 @end
@@ -24,27 +25,46 @@
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Status" image:[UIImage imageNamed:@"Dashboard"] tag:0];
         self.navigationItem.title = @"Status";
         
+        _statuses = [[NSMutableArray alloc] init];
+        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNewStatus:)
                                                      name:CSBundlePostStatusUpdateNotification object:nil];
-        _statuses = [[NSMutableArray alloc] init];
     }
+    
     return self;
 }
 
--(void)viewDidLoad
+- (void)viewDidLoad
 {
     [super viewDidLoad];
     self.tableView.rowHeight = 88;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
+    _lastSeenStatusesCount = _statuses.count;
+    [self updateTabBarItem];
+}
+
+- (void)updateTabBarItem
+{
+    self.tabBarItem.badgeValue = (_lastSeenStatusesCount == _statuses.count) ? nil : [NSString stringWithFormat:@"%lu", _statuses.count - _lastSeenStatusesCount];
 }
 
 - (void)handleNewStatus:(NSNotification *)notification
 {
     [_statuses addObject:notification];
     [self.tableView reloadData];
+    
+    if (self.tabBarController.selectedViewController == self)
+        _lastSeenStatusesCount = _statuses.count;
+    [self updateTabBarItem];
 }
 
 #pragma mark - UITableViewDataSource
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _statuses.count;
