@@ -7,6 +7,7 @@
 //
 
 #import "PluginContainerViewController.h"
+#import "CSBundle.h"
 
 @interface PluginContainerViewController () {
     dispatch_source_t _source;
@@ -41,10 +42,13 @@ static inline NSString *pluginsDirectoryPath()
 - (void)updateTabBar
 {
     NSMutableArray *viewControllers = [NSMutableArray array];
-    for (NSString *plugin in _listOfPlugins)
+    for (NSBundle *plugin in _listOfPlugins)
     {
-        UIViewController *viewController = [[UIViewController alloc] init];
-        viewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:plugin image:nil tag:0];
+        NSString *bundleName = [plugin objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleNameKey];
+        UIViewController <CSBundle> *viewController = [[[plugin principalClass] alloc] init];
+        [viewController setBundle:plugin];
+        viewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:bundleName image:nil tag:0];
+        
         [viewControllers addObject:viewController];
     }
     
@@ -54,8 +58,21 @@ static inline NSString *pluginsDirectoryPath()
 - (void)updatePluginList
 {
     NSError *__autoreleasing fileError;
-    _listOfPlugins = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:pluginsDirectoryPath() error:&fileError];
+    NSArray *pluginFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:pluginsDirectoryPath() error:&fileError];
     
+    NSMutableArray *plugins = [NSMutableArray array];
+    for (NSString *pluginFilename in pluginFiles)
+    {
+        NSBundle *plugin = [[NSBundle alloc] initWithPath:[pluginsDirectoryPath() stringByAppendingPathComponent:pluginFilename]];
+        if (!plugin)
+            continue;
+        
+        NSError *__autoreleasing error;
+        [plugin loadAndReturnError:&error];
+        [plugins addObject:plugin];
+    }
+    
+    _listOfPlugins = plugins;
     [self updateTabBar];
 }
 

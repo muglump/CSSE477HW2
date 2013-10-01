@@ -51,6 +51,7 @@
 		9ED3C35617FA4587005A04EB /* CSSE477HW2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSE477HW2Tests.m; sourceTree = "<group>"; };
 		9ED3C36017FA477A005A04EB /* PluginContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginContainerViewController.h; sourceTree = "<group>"; };
 		9ED3C36117FA477A005A04EB /* PluginContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginContainerViewController.m; sourceTree = "<group>"; };
+		B3579CAC17FA5F20005C3560 /* CSBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSBundle.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +117,7 @@
 				9ED3C33817FA4587005A04EB /* Supporting Files */,
 				9ED3C36017FA477A005A04EB /* PluginContainerViewController.h */,
 				9ED3C36117FA477A005A04EB /* PluginContainerViewController.m */,
+				B3579CAC17FA5F20005C3560 /* CSBundle.h */,
 			);
 			path = CSSE477HW2;
 			sourceTree = "<group>";
@@ -450,6 +452,7 @@
 				9ED3C35C17FA4587005A04EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9ED3C35D17FA4587005A04EB /* Build configuration list for PBXNativeTarget "CSSE477HW2Tests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +461,7 @@
 				9ED3C35F17FA4587005A04EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
