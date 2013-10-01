@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Ponies/Ponies.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CSSE477HW2/CSSE477HW2.xcodeproj">
    </FileRef>
    <FileRef

@@ -11,6 +11,7 @@
 		9ED3C37E17FA62DE005A04EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED3C37D17FA62DE005A04EB /* UIKit.framework */; };
 		9ED3C38017FA62E5005A04EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED3C37F17FA62E5005A04EB /* Foundation.framework */; };
 		9ED3C38317FA631B005A04EB /* DSPoniesRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3C38217FA631B005A04EB /* DSPoniesRootViewController.m */; };
+		9ED3C3AB17FA6AFD005A04EB /* PonyImages in Resources */ = {isa = PBXBuildFile; fileRef = 9ED3C3AA17FA6AFD005A04EB /* PonyImages */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		9ED3C37F17FA62E5005A04EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		9ED3C38117FA631B005A04EB /* DSPoniesRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSPoniesRootViewController.h; sourceTree = "<group>"; };
 		9ED3C38217FA631B005A04EB /* DSPoniesRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSPoniesRootViewController.m; sourceTree = "<group>"; };
+		9ED3C3AA17FA6AFD005A04EB /* PonyImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PonyImages; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		9ED3C37217FA62B9005A04EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9ED3C3AA17FA6AFD005A04EB /* PonyImages */,
 				9ED3C37317FA62B9005A04EB /* Ponies-Info.plist */,
 				9ED3C37417FA62B9005A04EB /* InfoPlist.strings */,
 				9ED3C37717FA62B9005A04EB /* Ponies-Prefix.pch */,
@@ -136,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ED3C3AB17FA6AFD005A04EB /* PonyImages in Resources */,
 				9ED3C37617FA62B9005A04EB /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

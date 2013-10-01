@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0388B88A-AD1C-4A1A-9421-2F09BE679613</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Workspace</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>15899C31-2BFE-4769-B9ED-34A58E77E84A</key>
+		<string>https://github.com/muglump/CSSE477HW2.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Workspace.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>15899C31-2BFE-4769-B9ED-34A58E77E84A</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/muglump/CSSE477HW2.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>15899C31-2BFE-4769-B9ED-34A58E77E84A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>15899C31-2BFE-4769-B9ED-34A58E77E84A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CSSE477HW2</string>
+		</dict>
+	</array>
+</dict>
+</plist>

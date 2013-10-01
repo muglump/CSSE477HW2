@@ -13,11 +13,19 @@
     UIImageView *_poniesView;
     
     NSBundle *_bundle;
+    NSArray *_ponyImages;
+    NSInteger _index;
 }
 
 @end
 
 @implementation DSPoniesRootViewController
+
+- (void)changePonyImage
+{
+    _poniesView.image = [UIImage imageWithContentsOfFile:_ponyImages[0]];
+    _index = (_index + 1) % _ponyImages.count;
+}
 
 - (void)viewDidLoad
 {
@@ -35,16 +43,28 @@
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_poniesButton attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
     
-    UIImage *cats = [UIImage imageWithContentsOfFile:[_bundle pathForResource:@"cats" ofType:@"jpg"]];
-    _poniesView = [[UIImageView alloc] initWithImage:cats];
+    _ponyImages = [_bundle pathsForResourcesOfType:@".png" inDirectory:@"PonyImages"];
+    _poniesView = [[UIImageView alloc] initWithImage:nil];
+    [self changePonyImage];
     _poniesView.translatesAutoresizingMaskIntoConstraints = NO;
     _poniesView.hidden = YES;
     _poniesView.contentMode = UIViewContentModeScaleAspectFill;
     
-    NSDictionary *views = @{@"cats": _poniesView};
+    NSDictionary *views = @{@"ponies": _poniesView};
     [self.view addSubview:_poniesView];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[cats]|" options:kNilOptions metrics:Nil views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[cats]|" options:kNilOptions metrics:Nil views:views]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[ponies]|" options:kNilOptions metrics:Nil views:views]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[ponies]|" options:kNilOptions metrics:Nil views:views]];
+    
+    UIButton *nextPony = [UIButton buttonWithType:UIButtonTypeCustom];
+    nextPony.translatesAutoresizingMaskIntoConstraints = NO;
+    nextPony.backgroundColor = [UIColor redColor];
+    [nextPony addTarget:self action:@selector(changePonyImage) forControlEvents:UIControlEventTouchUpInside];
+    
+    views = @{@"nextPony": nextPony};
+    [_poniesView addSubview:nextPony];
+    [_poniesView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[nextPony]|" options:kNilOptions metrics:Nil views:views]];
+    [_poniesView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[nextPony]|" options:kNilOptions metrics:Nil views:views]];
+    
 }
 
 - (void)setBundle:(NSBundle *)bundle
