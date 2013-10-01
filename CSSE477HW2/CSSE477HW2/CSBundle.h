@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const CSBundlePostStatusUpdateNotification;
+extern NSString *const CSBundlePostStatusUpdateMessageKey;
+
 @protocol CSBundle <NSObject>
 
 - (void)setBundle:(NSBundle *)bundle;

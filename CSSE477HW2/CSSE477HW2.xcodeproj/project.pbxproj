@@ -21,6 +21,7 @@
 		9ED3C35717FA4587005A04EB /* CSSE477HW2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3C35617FA4587005A04EB /* CSSE477HW2Tests.m */; };
 		9ED3C36217FA477A005A04EB /* PluginContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3C36117FA477A005A04EB /* PluginContainerViewController.m */; };
 		B3579CB217FB766B005C3560 /* Dashboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3579CB117FB766B005C3560 /* Dashboard@2x.png */; };
+		B3579CB717FB7830005C3560 /* CSBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = B3579CB617FB7830005C3560 /* CSBundle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		9ED3C36117FA477A005A04EB /* PluginContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginContainerViewController.m; sourceTree = "<group>"; };
 		B3579CAC17FA5F20005C3560 /* CSBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSBundle.h; sourceTree = "<group>"; };
 		B3579CB117FB766B005C3560 /* Dashboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dashboard@2x.png"; sourceTree = "<group>"; };
+		B3579CB617FB7830005C3560 /* CSBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSBundle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				9ED3C36017FA477A005A04EB /* PluginContainerViewController.h */,
 				9ED3C36117FA477A005A04EB /* PluginContainerViewController.m */,
 				B3579CAC17FA5F20005C3560 /* CSBundle.h */,
+				B3579CB617FB7830005C3560 /* CSBundle.m */,
 			);
 			path = CSSE477HW2;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ED3C34217FA4587005A04EB /* OrganizerAppDelegate.m in Sources */,
+				B3579CB717FB7830005C3560 /* CSBundle.m in Sources */,
 				9ED3C33E17FA4587005A04EB /* main.m in Sources */,
 				9ED3C36217FA477A005A04EB /* PluginContainerViewController.m in Sources */,
 			);
