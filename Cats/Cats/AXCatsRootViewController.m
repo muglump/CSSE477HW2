@@ -56,6 +56,9 @@
 {
     _catsButton.hidden = YES;
     _catsView.hidden = NO;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:CSBundlePostStatusUpdateNotification object:_bundle
+                                                      userInfo:@{CSBundlePostStatusUpdateMessageKey: @"You get the cats!"}];
 }
 
 @end
