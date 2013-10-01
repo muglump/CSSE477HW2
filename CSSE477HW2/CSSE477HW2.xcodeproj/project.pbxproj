@@ -19,6 +19,7 @@
 		9ED3C34D17FA4587005A04EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED3C33517FA4587005A04EB /* UIKit.framework */; };
 		9ED3C35517FA4587005A04EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9ED3C35317FA4587005A04EB /* InfoPlist.strings */; };
 		9ED3C35717FA4587005A04EB /* CSSE477HW2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3C35617FA4587005A04EB /* CSSE477HW2Tests.m */; };
+		9ED3C36217FA477A005A04EB /* PluginContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3C36117FA477A005A04EB /* PluginContainerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		9ED3C35217FA4587005A04EB /* CSSE477HW2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CSSE477HW2Tests-Info.plist"; sourceTree = "<group>"; };
 		9ED3C35417FA4587005A04EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9ED3C35617FA4587005A04EB /* CSSE477HW2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSE477HW2Tests.m; sourceTree = "<group>"; };
+		9ED3C36017FA477A005A04EB /* PluginContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginContainerViewController.h; sourceTree = "<group>"; };
+		9ED3C36117FA477A005A04EB /* PluginContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginContainerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				9ED3C34117FA4587005A04EB /* OrganizerAppDelegate.m */,
 				9ED3C34317FA4587005A04EB /* Images.xcassets */,
 				9ED3C33817FA4587005A04EB /* Supporting Files */,
+				9ED3C36017FA477A005A04EB /* PluginContainerViewController.h */,
+				9ED3C36117FA477A005A04EB /* PluginContainerViewController.m */,
 			);
 			path = CSSE477HW2;
 			sourceTree = "<group>";
@@ -188,7 +193,7 @@
 		9ED3C32617FA4587005A04EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = Organizer;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "David Savrda";
 				TargetAttributes = {
@@ -242,6 +247,7 @@
 			files = (
 				9ED3C34217FA4587005A04EB /* OrganizerAppDelegate.m in Sources */,
 				9ED3C33E17FA4587005A04EB /* main.m in Sources */,
+				9ED3C36217FA477A005A04EB /* PluginContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
