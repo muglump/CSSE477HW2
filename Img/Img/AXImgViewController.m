@@ -143,6 +143,9 @@
         _downloadTask = nil;
         _progressView.progress = 0;
         _imageView.image = [UIImage imageWithContentsOfFile:finalURL.path];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:CSBundlePostStatusUpdateNotification object:_bundle
+                                                          userInfo:@{CSBundlePostStatusUpdateMessageKey: @"Download Completed"}];
     });
 }
 
