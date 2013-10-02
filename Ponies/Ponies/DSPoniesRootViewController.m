@@ -24,6 +24,9 @@
 - (void)changePonyImage
 {
     _poniesView.image = [UIImage imageWithContentsOfFile:_ponyImages[_index]];
+    NSString *notification = [NSString stringWithFormat:@"You get pony number: %d", _index];
+    [[NSNotificationCenter defaultCenter] postNotificationName:CSBundlePostStatusUpdateNotification object:_bundle
+                                                      userInfo:@{CSBundlePostStatusUpdateMessageKey: notification}];
     _index = (_index + 1) % _ponyImages.count;
 }
 
@@ -77,6 +80,8 @@
 {
     _poniesButton.hidden = YES;
     _poniesView.hidden = NO;
+    [[NSNotificationCenter defaultCenter] postNotificationName:CSBundlePostStatusUpdateNotification object:_bundle
+                                                      userInfo:@{CSBundlePostStatusUpdateMessageKey: @"You get the ponies!"}];
 }
 
 
