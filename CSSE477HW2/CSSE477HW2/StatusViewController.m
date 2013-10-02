@@ -37,7 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.rowHeight = 88;
+    self.tableView.rowHeight = 55;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -74,7 +74,10 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"standard"];
     if (!cell)
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"standard"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
     
     NSNotification *notification = _statuses[indexPath.row];
     NSBundle *plugin = notification.object;
@@ -85,6 +88,7 @@
     NSString *iconName = [plugin objectForInfoDictionaryKey:@"CFBundleIconFile"];
     NSString *iconPath = [plugin pathForResource:iconName.stringByDeletingPathExtension ofType:iconName.pathExtension];
     UIImage *pluginIcon = [UIImage imageWithCGImage:[UIImage imageWithContentsOfFile:iconPath].CGImage scale:2 orientation:UIImageOrientationUp];
+    pluginIcon = (pluginIcon) ?: [UIImage imageNamed:@"Dashboard"];
     cell.imageView.image = [pluginIcon imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
     return cell;

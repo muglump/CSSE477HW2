@@ -12,7 +12,7 @@
 
 @interface PluginContainerViewController () {
     dispatch_source_t _source;
-    NSArray *_listOfPlugins;
+    NSMutableArray *_listOfPlugins;
     UIViewController *_statusItem;
 }
 
@@ -26,6 +26,7 @@
     {
         UIViewController *rootViewController = [[StatusViewController alloc] init];
         _statusItem = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+        _listOfPlugins = [[NSMutableArray alloc] init];
         [self beginWatchingPluginDirectory];
         [self updatePluginList];
         
@@ -47,8 +48,7 @@ static inline NSString *pluginsDirectoryPath()
 
 - (void)updateTabBar
 {
-    NSMutableArray *viewControllers = [NSMutableArray array];
-    [viewControllers addObject:_statusItem];
+    NSMutableArray *viewControllers = [NSMutableArray arrayWithObject:_statusItem];
     for (NSBundle *plugin in _listOfPlugins)
     {
         NSString *bundleName = [plugin objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleNameKey];
@@ -71,19 +71,43 @@ static inline NSString *pluginsDirectoryPath()
     NSError *__autoreleasing fileError;
     NSArray *pluginFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:pluginsDirectoryPath() error:&fileError];
     
-    NSMutableArray *plugins = [NSMutableArray array];
+    NSMutableArray *allValidPlugins = [NSMutableArray array];
     for (NSString *pluginFilename in pluginFiles)
     {
         NSBundle *plugin = [[NSBundle alloc] initWithPath:[pluginsDirectoryPath() stringByAppendingPathComponent:pluginFilename]];
         if (!plugin)
             continue;
         
-        NSError *__autoreleasing error;
-        [plugin loadAndReturnError:&error];
-        [plugins addObject:plugin];
+        [allValidPlugins addObject:plugin];
     }
     
-    _listOfPlugins = plugins;
+    for (NSBundle *existingPlugin in [_listOfPlugins copy])
+    {
+        if ([allValidPlugins containsObject:existingPlugin])
+            continue;
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:CSBundlePostStatusUpdateNotification object:existingPlugin
+                                                          userInfo:@{CSBundlePostStatusUpdateMessageKey: @"Unloaded plugin"}];
+        [_listOfPlugins removeObject:existingPlugin];
+    }
+    
+    for (NSBundle *plugin in allValidPlugins)
+    {
+        if ([_listOfPlugins containsObject:plugin])
+            continue;
+        
+        NSError *__autoreleasing error;
+        [plugin loadAndReturnError:&error];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:CSBundlePostStatusUpdateNotification object:plugin
+                                                          userInfo:@{CSBundlePostStatusUpdateMessageKey: @"Loaded plugin"}];
+        
+        if (error)
+            NSLog(@"Could not load %@: %@", plugin, error);
+        else
+            [_listOfPlugins addObject:plugin];
+    }
+    
     [self updateTabBar];
 }
 
