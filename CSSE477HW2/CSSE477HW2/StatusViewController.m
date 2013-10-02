@@ -9,7 +9,7 @@
 #import "StatusViewController.h"
 #import "CSBundle.h"
 
-@interface StatusViewController (){
+@interface StatusViewController () {
     NSMutableArray *_statuses;
     NSUInteger _lastSeenStatusesCount;
 }
@@ -24,6 +24,7 @@
     {
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Status" image:[UIImage imageNamed:@"Dashboard"] tag:0];
         self.navigationItem.title = @"Status";
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear All" style:UIBarButtonItemStyleBordered target:self action:@selector(clearAllStatuses:)];
         
         _statuses = [[NSMutableArray alloc] init];
         
@@ -61,6 +62,12 @@
     if (self.tabBarController.selectedViewController == self.navigationController)
         _lastSeenStatusesCount = _statuses.count;
     [self updateTabBarItem];
+}
+
+- (void)clearAllStatuses:(id)sender
+{
+    [_statuses removeAllObjects];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
