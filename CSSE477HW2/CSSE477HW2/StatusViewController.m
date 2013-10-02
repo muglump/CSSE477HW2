@@ -58,7 +58,7 @@
     [_statuses addObject:notification];
     [self.tableView reloadData];
     
-    if (self.tabBarController.selectedViewController == self)
+    if (self.tabBarController.selectedViewController == self.navigationController)
         _lastSeenStatusesCount = _statuses.count;
     [self updateTabBarItem];
 }
