@@ -55,7 +55,7 @@
 
 - (void)handleNewStatus:(NSNotification *)notification
 {
-    [_statuses addObject:notification];
+    [_statuses insertObject:notification atIndex:0];
     [self.tableView reloadData];
     
     if (self.tabBarController.selectedViewController == self.navigationController)
